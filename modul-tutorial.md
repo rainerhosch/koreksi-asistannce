@@ -108,21 +108,8 @@ USE koreksi_nilai_db;
         FOREIGN KEY (id_mapel) REFERENCES mata_pelajaran(id)
     );
     ```
-
-4. **soal**
-    ```sql
-    CREATE TABLE soal (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        id_mapel INT NOT NULL,
-        jenis_soal ENUM('PG', 'ESAI') NOT NULL,
-        soal_text TEXT NOT NULL,
-        jawaban TEXT NOT NULL,
-        bobot_nilai INT NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (id_mapel) REFERENCES mata_pelajaran(id)
-    );
     
-5. **ujian_jawaban**
+4. **ujian_jawaban**
     ```sql
     CREATE TABLE ujian_jawaban (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -135,7 +122,7 @@ USE koreksi_nilai_db;
     );
     ```
     
-6. **nilai_hasil_ujian**
+5. **nilai_hasil_ujian**
     ```sql
     CREATE TABLE nilai_hasil_ujian (
         id INT AUTO_INCREMENT PRIMARY KEY,
