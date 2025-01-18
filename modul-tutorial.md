@@ -136,6 +136,122 @@ USE koreksi_nilai_db;
     );
     ```
 
+
+## Struktur Direktori Utama
+```
+project_root/
+|-- application/
+|   |-- config/
+|   |-- controllers/
+|   |-- models/
+|   |-- views/
+|   |-- libraries/
+|   |-- helpers/
+|-- assets/
+|   |-- css/
+|   |-- js/
+|   |-- images/
+|-- system/
+|-- user_guide/
+|-- index.php
+|-- .htaccess
+```
+
+## Penjelasan Direktori dan File
+
+### 1. `application/`
+Berisi kode aplikasi utama.
+
+#### a. `config/`
+Folder ini menyimpan file konfigurasi.
+- **`config.php`**: Konfigurasi dasar CodeIgniter.
+- **`database.php`**: Konfigurasi koneksi database.
+- **`autoload.php`**: Memuat library, helper, dan model yang diperlukan.
+
+#### b. `controllers/`
+Folder ini berisi file controller yang menangani permintaan dari pengguna.
+- **`Auth.php`**: Mengelola login, logout, dan autentikasi.
+- **`Dashboard.php`**: Mengelola halaman utama setelah login.
+- **`Admin.php`**: Mengelola data master (user, kelas, jurusan, dll).
+- **`Guru.php`**: Mengelola data siswa, soal, dan nilai.
+
+#### c. `models/`
+Folder ini berisi file model untuk manipulasi database.
+- **`Auth_model.php`**: Operasi CRUD untuk tabel `users`.
+- **`Admin_model.php`**: Operasi CRUD untuk data master.
+- **`Guru_model.php`**: Operasi CRUD untuk data siswa, soal, dan hasil ujian.
+
+#### d. `views/`
+Folder ini menyimpan file tampilan HTML.
+- **`auth/`**: Berisi halaman login.
+  - `login.php`
+- **`dashboard/`**: Berisi halaman utama.
+  - `index.php`
+- **`admin/`**: Berisi halaman untuk admin.
+  - `manage_users.php`
+  - `manage_kelas.php`
+  - `manage_jurusan.php`
+  - `manage_mapel.php`
+- **`guru/`**: Berisi halaman untuk guru.
+  - `manage_siswa.php`
+  - `manage_soal.php`
+  - `manage_nilai.php`
+
+#### e. `libraries/`
+Custom library untuk fitur tambahan (jika diperlukan).
+
+#### f. `helpers/`
+Custom helper untuk fungsi-fungsi utilitas (jika diperlukan).
+
+### 2. `assets/`
+Folder ini menyimpan file statis seperti CSS, JavaScript, dan gambar.
+
+#### a. `css/`
+Folder untuk file CSS.
+- **`style.css`**: File utama untuk styling aplikasi.
+
+#### b. `js/`
+Folder untuk file JavaScript.
+- **`app.js`**: File utama untuk scripting aplikasi.
+
+#### c. `images/`
+Folder untuk menyimpan gambar.
+
+### 3. `system/`
+Folder inti dari framework CodeIgniter. **Jangan diubah.**
+
+### 4. `user_guide/`
+Dokumentasi bawaan CodeIgniter.
+
+### 5. `index.php`
+File utama untuk bootstrap aplikasi.
+
+### 6. `.htaccess`
+File konfigurasi server untuk mempermudah URL routing.
+
+## Alur Pengembangan
+1. **Setup Proyek**
+   - Konfigurasi file `config/config.php` dan `config/database.php`.
+   - Pastikan base URL dan database sesuai dengan lingkungan lokal.
+
+2. **Buat Controller**
+   - `Auth.php` untuk autentikasi.
+   - `Admin.php` dan `Guru.php` untuk fitur utama.
+
+3. **Buat Model**
+   - `Auth_model.php`, `Admin_model.php`, dan `Guru_model.php`.
+
+4. **Buat View**
+   - Halaman login di `views/auth/login.php`.
+   - Halaman dashboard di `views/dashboard/index.php`.
+   - Halaman manajemen data di `views/admin/` dan `views/guru/`.
+
+5. **Tambahkan CSS dan JavaScript**
+   - Gunakan file di folder `assets/` untuk desain dan interaktivitas.
+
+6. **Testing dan Deployment**
+   - Lakukan pengujian menyeluruh pada fitur aplikasi.
+   - Deploy ke server dengan menyesuaikan konfigurasi di `index.php` dan `config.php`.
 ## Implementasi Aplikasi
 
 ### 1. Controller `Auth.php`
