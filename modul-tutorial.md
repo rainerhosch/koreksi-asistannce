@@ -139,8 +139,8 @@ USE koreksi_nilai_db;
 ## Buat Dummy Data, untuk mengisi database.
 **query untuk membuat user**
 ```sql
-INSERT INTO `users` (`id`, `username`, `password`, `role`, `created_at`) VALUES
-(1, 'admin', '$2y$10$OeVDniPuzsnivpON5AGVr.cy0Rwc1zq6GUzl2wBGqbihJZi./ff3G', 'admin', '2025-01-18 04:22:08');
+INSERT INTO `users` (`username`, `password`, `role`) VALUES
+('admin', '$2y$10$OeVDniPuzsnivpON5AGVr.cy0Rwc1zq6GUzl2wBGqbihJZi./ff3G', 'admin');
 ```
 
 
